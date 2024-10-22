@@ -23,17 +23,17 @@ class _TaskCreatePageState extends State<TaskCreatePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create Task'),
+        title: const Text('Create Task'),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(18.0),
+          padding: EdgeInsets.all(18.0),
           child: Column(
             children: [
               //_buildTitle(),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               // _buildSubtitle(),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               //  _buildDatePicker(),
             ],
           ),

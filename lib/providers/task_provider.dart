@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/models/task_group.dart';
+import 'package:todo_app/models/task_model.dart';
 import 'package:todo_app/repository/supabase_repository.dart';
 
-class TaskGroupProvider extends ChangeNotifier {
+class TaskProvider extends ChangeNotifier {
   final _repo = SupabaseRepository();
 
-  List<TaskGroup> _taskGroups = [];
-  List<TaskGroup> get taskGroups => _taskGroups;
+  List<Task> _tasks = [];
+  List<Task> get tasks => _tasks;
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;
@@ -14,11 +14,11 @@ class TaskGroupProvider extends ChangeNotifier {
   bool _hasError = false;
   bool get hasError => _isLoading;
 
-  Future<void> listTaskGroups() async {
+  Future<void> listTasksByGroupId(String groupId) async {
     _isLoading = true;
     notifyListeners();
     try {
-      _taskGroups = await _repo.listTaskGroups();
+      _tasks = await _repo.listTasksByGroup(groupId);
     } catch (e) {
       _hasError = true;
       print(e);

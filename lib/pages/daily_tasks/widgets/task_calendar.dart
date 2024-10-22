@@ -5,7 +5,7 @@ class TaskCalendar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       height: 80,
       width: double.infinity,
       child: Placeholder(),
